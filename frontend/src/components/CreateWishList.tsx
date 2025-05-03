@@ -16,7 +16,7 @@ export default function CreateWishList() {
 
     const createWishList = async () => {
         // Logic to create a wishlist
-        const res = await axios.post('http://localhost:5000/wishlist/add', {
+        const res = await axios.post('https://wishlist-app-aoix.onrender.com/wishlist/add', {
             name,
             description,
             ownerEmail: user.email,

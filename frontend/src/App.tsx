@@ -33,7 +33,7 @@ function InitUser() {
 
   const init = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/auth/me`, {
+      const response = await axios.get(`https://wishlist-app-aoix.onrender.com/auth/me`, {
         headers: {
           email: localStorage.getItem("user"), 
         },

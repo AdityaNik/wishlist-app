@@ -26,7 +26,7 @@ export default function Dashboard() {
 
   const getWishlists = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/wishlist/");
+      const response = await axios.get("https://wishlist-app-aoix.onrender.com/wishlist/");
       const data = await response.data;
       console.log("Wishlists: ", data);
       setWishlists(data);

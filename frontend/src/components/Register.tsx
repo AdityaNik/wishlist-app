@@ -16,7 +16,7 @@ export default function Register() {
 
   const handleRegister = async () => {
 
-    const res = await axios.post("http://localhost:5000/auth/register", {
+    const res = await axios.post("https://wishlist-app-aoix.onrender.com/auth/register", {
       email,
       username,
       password,

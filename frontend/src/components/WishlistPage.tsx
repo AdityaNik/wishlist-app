@@ -24,7 +24,7 @@ export default function WishlistPage() {
 
   const getProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/product/");
+      const response = await axios.get("https://wishlist-app-aoix.onrender.com/product/");
       const data = await response.data;
       console.log("Products with id: ", data);
       const filteredProducts = data.filter((item: { wishlistId: string }) => item.wishlistId === id);
@@ -38,7 +38,7 @@ export default function WishlistPage() {
   const getWishlist = async () => {
     try {
       console.log("Fetching wishlist with id: ", id);
-      const response = await axios.get("http://localhost:5000/wishlist/" + id);
+      const response = await axios.get("https://wishlist-app-aoix.onrender.com/wishlist/" + id);
       const data = await response.data;
       console.log("wishllist with id: ", data);
       setWishlist(data);
@@ -48,7 +48,7 @@ export default function WishlistPage() {
   };
 
   const addProduct = async () => {
-    const res = await axios.post("http://localhost:5000/product/add", {
+    const res = await axios.post("https://wishlist-app-aoix.onrender.com/product/add", {
       wishlistId: id,
       name: newProduct.name,
       price: parseFloat(newProduct.price),
@@ -69,7 +69,7 @@ export default function WishlistPage() {
   };
 
   const deleteProduct = async (id: string) => {
-    const res = await axios.delete("http://localhost:5000/product/delete/" + id);
+    const res = await axios.delete("https://wishlist-app-aoix.onrender.com/product/delete/" + id);
     console.log(res.data);
 
     setProducts((prev) => prev.filter((p) => p._id !== id));
