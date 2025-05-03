@@ -8,7 +8,14 @@ import { Button } from "./ui/button";
 export default function Dashboard() {
   const user = useAtomValue(userState);
   const navigate = useNavigate();
-  const [wishlists, setWishlists] = useState([]);
+  interface Wishlist {
+    _id: string;
+    name: string;
+    description: string;
+    ownerEmail: string;
+  }
+
+  const [wishlists, setWishlists] = useState<Wishlist[]>([]);
   useEffect(() => {
     getWishlists();
   }, []);

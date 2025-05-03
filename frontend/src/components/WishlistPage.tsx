@@ -15,7 +15,7 @@ export default function WishlistPage() {
     price: "",
     imageUrl: "",
   });
-  const [wishlist, setWishlist] = useState({});
+  const [wishlist, setWishlist] = useState<{ name?: string; description?: string; ownerEmail?: string }>({});
 
   useEffect(() => {
     getWishlist();
